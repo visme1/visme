@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banana Tycoon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap');
+      
+      body {
+        font-family: 'Nunito', sans-serif;
+        overscroll-behavior: none;
+      }
+      h1, h2, h3, .font-heading {
+        font-family: 'Fredoka One', cursive;
+      }
+      
+      /* Custom animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      .animate-pop {
+        animation: pop 0.2s ease-in-out;
+      }
+
+      /* Floating numbers animation */
+      @keyframes float-up-fade {
+        0% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-40px); }
+      }
+      .floating-number {
+        position: absolute;
+        animation: float-up-fade 1s ease-out forwards;
+        pointer-events: none;
+        font-weight: bold;
+        color: #d97706; /* amber-600 */
+        font-size: 1.5rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-slate-100 overflow-hidden h-screen w-screen">
+    <div id="root" class="h-full w-full"></div>
+  </body>
+</html>
